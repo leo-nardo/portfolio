@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Leonardo Vinicius
 
-## Getting Started
+Portfolio pessoal desenvolvido com Next.js, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 16 (App Router)
+- **Linguagem:** TypeScript
+- **Estilo:** Tailwind CSS
+- **Animações:** Framer Motion
+- **Fonte:** Inter (Google Fonts)
+- **Deploy:** Vercel
+
+## Estrutura de Seções
+
+| # | Seção | Descrição |
+|---|-------|-----------|
+| — | Hero | Apresentação, CTAs e download do currículo |
+| 01 | Sobre | Bio, foto e dados pessoais |
+| 02 | Habilidades | Stack técnica por categoria |
+| 03 | Projetos | Projetos selecionados com links |
+| 04 | Experiência | Trajetória profissional e educação |
+| 05 | Serviços | O que ofereço como freelancer |
+| 06 | Comunidade | Devs Tocantins |
+| 07 | Depoimentos | Carrossel com recomendações do LinkedIn |
+| 08 | Contato | Email, WhatsApp, LinkedIn e GitHub |
+
+## Estrutura de Arquivos
+
+```
+src/
+├── app/
+│   ├── layout.tsx        # Metadados, fonte, favicon
+│   ├── page.tsx          # Montagem das seções
+│   ├── globals.css       # Estilos globais e scrollbar
+│   └── favicon.svg       # Logo LS personalizado
+├── components/
+│   ├── sections/
+│   │   ├── Navbar.tsx
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Skills.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Services.tsx
+│   │   ├── Community.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── Contact.tsx
+│   │   └── Footer.tsx
+│   └── ui/
+│       └── Logo.tsx      # SVG do logo LS
+public/
+├── foto-leonardo.jpeg
+└── Curriculo_Leonardo_Vinicius.pdf
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Rodando localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Acesse [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Atualizando conteúdo
 
-To learn more about Next.js, take a look at the following resources:
+| O que mudar | Onde |
+|-------------|------|
+| Bio e dados pessoais | `src/components/sections/About.tsx` |
+| Stack e estatísticas | `src/components/sections/Skills.tsx` |
+| Projetos | `src/components/sections/Projects.tsx` |
+| Experiência e educação | `src/components/sections/Experience.tsx` |
+| Serviços | `src/components/sections/Services.tsx` |
+| Links da Devs Tocantins | `src/components/sections/Community.tsx` |
+| Depoimentos | `src/components/sections/Testimonials.tsx` |
+| Email, WhatsApp, redes | `src/components/sections/Contact.tsx` |
+| Currículo | Substitua `public/Curriculo_Leonardo_Vinicius.pdf` |
+| Foto | Substitua `public/foto-leonardo.jpeg` |
+| Favicon / Logo | `src/app/favicon.svg` e `src/components/ui/Logo.tsx` |
+| Título e metadados | `src/app/layout.tsx` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy na Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> **Atenção:** O projeto está na **raiz** do repositório.
+> Se o projeto foi importado quando havia uma subpasta `portfolio/`,
+> é necessário corrigir o Root Directory nas configurações.
 
-## Deploy on Vercel
+**Como corrigir:**
+1. Acesse [vercel.com](https://vercel.com) → seu projeto → **Settings**
+2. Vá em **General** → **Root Directory**
+3. **Apague** o valor `portfolio` e deixe o campo **vazio**
+4. Clique em **Save** e faça um novo deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Após isso o build funcionará normalmente — o `next build` local passa sem erros.
