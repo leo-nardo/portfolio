@@ -1,0 +1,12 @@
+<svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo escuro -->
+  <rect width="40" height="40" fill="#111111"/>
+  <!-- Borda interna -->
+  <rect x="2" y="2" width="36" height="36" stroke="#333333" stroke-width="1"/>
+  <!-- Letra L -->
+  <path d="M7 10 L7 30 L15 30" stroke="#fafaf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Letra S -->
+  <path d="M22 13.5 C22 11.5 23.5 10 26 10 C28.5 10 30 11.5 30 13.5 C30 15.5 28 17 26 18 C24 19 22 20.5 22 22.5 C22 24.5 23.5 26 26 26 C28.5 26 30 24.5 30 22.5" stroke="#fafaf8" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Ponto decorativo -->
+  <circle cx="35.5" cy="35.5" r="1.5" fill="#555555"/>
+</svg>
