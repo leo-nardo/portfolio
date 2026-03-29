@@ -79,17 +79,3 @@ Acesse [http://localhost:3000](http://localhost:3000).
 | Foto | Substitua `public/foto-leonardo.jpeg` |
 | Favicon / Logo | `src/app/favicon.svg` e `src/components/ui/Logo.tsx` |
 | Título e metadados | `src/app/layout.tsx` |
-
-## Deploy na Vercel
-
-> **Atenção:** O projeto está na **raiz** do repositório.
-> Se o projeto foi importado quando havia uma subpasta `portfolio/`,
-> é necessário corrigir o Root Directory nas configurações.
-
-**Como corrigir:**
-1. Acesse [vercel.com](https://vercel.com) → seu projeto → **Settings**
-2. Vá em **General** → **Root Directory**
-3. **Apague** o valor `portfolio` e deixe o campo **vazio**
-4. Clique em **Save** e faça um novo deploy
-
-Após isso o build funcionará normalmente — o `next build` local passa sem erros.
