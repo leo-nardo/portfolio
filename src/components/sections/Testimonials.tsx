@@ -68,7 +68,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="depoimentos" className="py-32 bg-[#fafaf8] overflow-hidden">
+    <section id="depoimentos" className="py-20 bg-[#fafaf8] overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
         <motion.p
           className="text-gray-400 text-xs tracking-[0.5em] uppercase mb-4"
@@ -77,10 +77,10 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          07 — Depoimentos
+          05 — Depoimentos
         </motion.p>
 
-        <div className="flex items-end justify-between mb-14">
+        <div className="flex items-end justify-between mb-10">
           <motion.h2
             className="text-4xl md:text-5xl font-light text-gray-900 leading-tight"
             style={{ letterSpacing: "-0.02em" }}

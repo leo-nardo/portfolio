@@ -32,7 +32,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-32 px-6 bg-white">
+    <section id="servicos" className="py-20 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <motion.p
           className="text-gray-400 text-xs tracking-[0.5em] uppercase mb-4"
@@ -41,10 +41,10 @@ export default function Services() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          05 — Serviços
+          07 — Serviços
         </motion.p>
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <motion.h2
             className="text-4xl md:text-5xl font-light text-gray-900 leading-tight"
             style={{ letterSpacing: "-0.02em" }}

@@ -83,7 +83,7 @@ const links = [
 
 export default function Community() {
   return (
-    <section id="comunidade" className="py-32 px-6 bg-[#fafaf8]">
+    <section id="comunidade" className="py-20 px-6 bg-[#fafaf8]">
       <div className="max-w-5xl mx-auto">
         <motion.p
           className="text-gray-400 text-xs tracking-[0.5em] uppercase mb-4"

@@ -58,7 +58,7 @@ const fadeUp = {
 
 export default function Experience() {
   return (
-    <section id="experiencia" className="py-32 px-6 bg-white">
+    <section id="experiencia" className="py-20 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <motion.p
           className="text-gray-400 text-xs tracking-[0.5em] uppercase mb-4"
@@ -67,11 +67,11 @@ export default function Experience() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          04 — Experiência
+          02 — Experiência
         </motion.p>
 
         <motion.h2
-          className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-20"
+          className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-12"
           style={{ letterSpacing: "-0.02em" }}
           variants={fadeUp}
           custom={1}

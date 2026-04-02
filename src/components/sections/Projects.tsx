@@ -72,7 +72,7 @@ function GithubIcon() {
 
 export default function Projects() {
   return (
-    <section id="projetos" className="py-32 px-6 bg-[#fafaf8]">
+    <section id="projetos" className="py-20 px-6 bg-[#fafaf8]">
       <div className="max-w-5xl mx-auto">
         <motion.p
           className="text-gray-400 text-xs tracking-[0.5em] uppercase mb-4"
@@ -81,11 +81,11 @@ export default function Projects() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          03 — Projetos
+          04 — Projetos
         </motion.p>
 
         <motion.h2
-          className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-16"
+          className="text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-10"
           style={{ letterSpacing: "-0.02em" }}
           variants={fadeUp}
           custom={1}

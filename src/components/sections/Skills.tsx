@@ -32,7 +32,7 @@ const fadeUp = {
 
 export default function Skills() {
   return (
-    <section id="habilidades" className="py-32 px-6 bg-white">
+    <section id="habilidades" className="py-20 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <motion.p
           className="text-gray-400 text-xs tracking-[0.5em] uppercase mb-4"
@@ -41,10 +41,10 @@ export default function Skills() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          02 — Habilidades
+          03 — Habilidades
         </motion.p>
 
-        <div className="flex items-end justify-between mb-16 gap-8">
+        <div className="flex items-end justify-between mb-10 gap-8">
           <motion.h2
             className="text-4xl md:text-5xl font-light text-gray-900 leading-tight"
             style={{ letterSpacing: "-0.02em" }}
@@ -95,7 +95,7 @@ export default function Skills() {
         </div>
 
         <motion.div
-          className="mt-20 pt-10 border-t border-gray-100 flex flex-wrap gap-12"
+          className="mt-12 pt-8 border-t border-gray-100 flex flex-wrap gap-12"
           variants={fadeUp}
           custom={6}
           initial="hidden"

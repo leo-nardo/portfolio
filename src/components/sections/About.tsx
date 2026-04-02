@@ -21,7 +21,7 @@ const details = [
 
 export default function About() {
   return (
-    <section id="sobre" className="py-32 px-6 bg-[#fafaf8]">
+    <section id="sobre" className="py-20 px-6 bg-[#fafaf8]">
       <div className="max-w-5xl mx-auto">
         <motion.p
           className="text-gray-400 text-xs tracking-[0.5em] uppercase mb-16"
@@ -128,7 +128,7 @@ export default function About() {
                 src="/foto-leonardo.jpeg"
                 alt="Leonardo Vinicius"
                 fill
-                className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+                className="object-cover object-top transition-all duration-700"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
