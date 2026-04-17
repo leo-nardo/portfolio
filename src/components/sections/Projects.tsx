@@ -5,26 +5,16 @@ import { motion } from "framer-motion";
 const projects = [
   {
     number: "01",
-    title: "Plataforma de Engajamento",
+    title: "legado.dev",
     description:
-      "Sistema de gamificação para a comunidade Devs Tocantins: ranking mensal, pontuação por contribuições e gestão de membros. Backend robusto com NestJS, autenticação JWT, controle de acesso por roles e CI/CD configurado.",
-    tags: ["NestJS", "TypeScript", "PostgreSQL", "Docker", "JWT"],
-    links: { github: "https://github.com/devs-tocantins/api-engajamento", live: null },
+      "Plataforma de gamificação para a comunidade Devs Tocantins. Membros acumulam XP enviando contribuições (pull requests, eventos, artigos) que passam por um fluxo de moderação. Há um ranking mensal, sistema de badges automáticos e manuais, transferências de pontos de reconhecimento entre membros e um painel administrativo com métricas da plataforma. A interface foi construída com Next.js 15, Tailwind CSS e shadcn/ui — com autenticação por e-mail e Google OAuth, internacionalização em pt-BR e inglês, e perfis públicos com avatar do GitHub.",
+    tags: ["Next.js", "NestJS", "TypeScript", "PostgreSQL", "Docker", "Tailwind", "JWT", "i18n"],
+    links: { github: "https://github.com/devs-tocantins/legado-dev", live: "https://legado-devs-tocantins.vercel.app" },
     highlight: true,
     status: null,
   },
   {
     number: "02",
-    title: "Front de Engajamento",
-    description:
-      "Interface da plataforma de engajamento da Devs Tocantins. Desenvolvido com Next.js, autenticação via Google OAuth, internacionalização, Storybook para componentes e testes E2E com Playwright.",
-    tags: ["Next.js", "TypeScript", "Storybook", "Playwright", "OAuth"],
-    links: { github: "https://github.com/devs-tocantins/front-engajamento", live: "https://front-engajamento.vercel.app" },
-    highlight: false,
-    status: null,
-  },
-  {
-    number: "03",
     title: "Jogo da Velha Sem Velha",
     description:
       "Variação criativa do jogo da velha onde as peças mais antigas desaparecem, implementando a estrutura de dados Fila (FIFO) com JavaScript puro. Um projeto simples que demonstra domínio de lógica e estruturas de dados.",
@@ -34,7 +24,7 @@ const projects = [
     status: null,
   },
   {
-    number: "04",
+    number: "03",
     title: "DevCards",
     description:
       "Plataforma colaborativa onde desenvolvedores criam cards visuais usando apenas HTML e CSS puro. Um experimento sobre criatividade dentro de restrições e colaboração em cadeia entre devs.",
