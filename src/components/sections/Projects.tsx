@@ -15,11 +15,11 @@ const projects = [
   },
   {
     number: "02",
-    title: "Jogo da Velha Sem Velha",
+    title: "Mastercont",
     description:
-      "Variação criativa do jogo da velha onde as peças mais antigas desaparecem, implementando a estrutura de dados Fila (FIFO) com JavaScript puro. Um projeto simples que demonstra domínio de lógica e estruturas de dados.",
-    tags: ["JavaScript", "HTML", "CSS", "Estrutura de Dados"],
-    links: { github: "https://github.com/leo-nardo/jogo-da-velha-sem-velha", live: "https://leo-nardo.github.io/jogo-da-velha-sem-velha/" },
+      "Landing page institucional desenvolvida para um escritório de contabilidade real. Conta com seções de serviços, diferenciais, processo de onboarding, depoimentos de clientes, FAQ e CTA com botão flutuante de WhatsApp. Entregue e validado pelo cliente, com foco em conversão e identidade visual profissional.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "SEO"],
+    links: { github: "https://github.com/leo-nardo/mastercont", live: "https://mastercont.vercel.app" },
     highlight: false,
     status: null,
   },
