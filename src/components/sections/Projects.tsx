@@ -1,10 +1,42 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
-const projects = [
+type Project = {
+  number: string;
+  title: string;
+  description: string;
+  tags: string[];
+  links: { github?: string; live?: string };
+  highlight: boolean;
+  status: string | null;
+};
+
+const featured = {
+  title: "Gaúcho Câmeras",
+  subtitle: "Oficina de motos ao vivo, direto no celular do cliente",
+  description:
+    "Sistema em produção para uma oficina de motos real: cada box de serviço tem uma câmera, e a oficina libera um link temporário para o dono da moto acompanhar o conserto ao vivo pelo celular, sem instalar nada. A funcionária gerencia tudo num painel web: vê todas as câmeras, cria e encerra links por cliente (cada um com nome e prazo próprios), define horários de transmissão e ajusta para onde cada câmera aponta.",
+  details: [
+    "Vídeo das câmeras Tapo puxado direto da nuvem da TP-Link e redistribuído em HLS pelo MediaMTX, sem precisar de um computador ligado na oficina.",
+    "Transmissão só sob demanda: a câmera só é puxada quando há um cliente ou o painel assistindo, dentro do horário da oficina, o que corta o consumo de banda.",
+    "Links de acesso com expiração e encerramento manual que derrubam a transmissão de quem já está com a página aberta.",
+    "Player com reconexão automática e detecção de travamento, pensado para redes móveis instáveis.",
+    "Deploy próprio numa VM Oracle Cloud com Docker, Caddy (HTTPS automático) e PostgreSQL, em domínio próprio.",
+  ],
+  tags: ["NestJS", "React", "TypeScript", "PostgreSQL", "MediaMTX", "HLS", "Docker", "Caddy", "Oracle Cloud"],
+  images: [
+    { src: "/projetos/gaucho-cameras/painel.webp", alt: "Painel da oficina com as câmeras dos boxes ao vivo e os links liberados para cada cliente", width: 1600, height: 1200, caption: "Painel da oficina" },
+    { src: "/projetos/gaucho-cameras/cliente-celular.webp", alt: "Tela do cliente no celular acompanhando o box da sua moto ao vivo", width: 900, height: 737, caption: "Link do cliente, no celular" },
+    { src: "/projetos/gaucho-cameras/horarios.webp", alt: "Tela de horários de transmissão de cada câmera", width: 1600, height: 1200, caption: "Horários de transmissão" },
+    { src: "/projetos/gaucho-cameras/posicao.webp", alt: "Tela para ajustar para onde a câmera aponta, com posições salvas", width: 1600, height: 1200, caption: "Posição da câmera" },
+  ],
+};
+
+const projects: Project[] = [
   {
-    number: "01",
+    number: "02",
     title: "legado.dev",
     description:
       "Plataforma de gamificação para a comunidade Devs Tocantins. Membros acumulam XP enviando contribuições (pull requests, eventos, artigos) que passam por um fluxo de moderação. Há um ranking mensal, sistema de badges automáticos e manuais, transferências de pontos de reconhecimento entre membros e um painel administrativo com métricas da plataforma. A interface foi construída com Next.js 15, Tailwind CSS e shadcn/ui — com autenticação por e-mail e Google OAuth, internacionalização em pt-BR e inglês, e perfis públicos com avatar do GitHub.",
@@ -14,7 +46,7 @@ const projects = [
     status: null,
   },
   {
-    number: "02",
+    number: "03",
     title: "Mastercont",
     description:
       "Landing page institucional desenvolvida para um escritório de contabilidade real. Conta com seções de serviços, diferenciais, processo de onboarding, depoimentos de clientes, FAQ e CTA com botão flutuante de WhatsApp. Entregue e validado pelo cliente, com foco em conversão e identidade visual profissional.",
@@ -24,7 +56,7 @@ const projects = [
     status: null,
   },
   {
-    number: "03",
+    number: "04",
     title: "DevCards",
     description:
       "Plataforma colaborativa onde desenvolvedores criam cards visuais usando apenas HTML e CSS puro. Um experimento sobre criatividade dentro de restrições e colaboração em cadeia entre devs.",
@@ -87,6 +119,8 @@ export default function Projects() {
           <span className="font-semibold">Selecionados</span>
         </motion.h2>
 
+        <FeaturedProject />
+
         <div className="flex flex-col divide-y divide-gray-100">
           {projects.map((p, i) => (
             <motion.div
@@ -124,15 +158,17 @@ export default function Projects() {
               </div>
 
               <div className="flex items-center gap-4 md:pt-1">
-                <a
-                  href={p.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-gray-900 transition-colors duration-300 flex items-center gap-1.5 text-xs"
-                >
-                  <GithubIcon />
-                  <span>Código</span>
-                </a>
+                {p.links.github && (
+                  <a
+                    href={p.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-gray-900 transition-colors duration-300 flex items-center gap-1.5 text-xs"
+                  >
+                    <GithubIcon />
+                    <span>Código</span>
+                  </a>
+                )}
                 {p.links.live && (
                   <a
                     href={p.links.live}
@@ -171,5 +207,83 @@ export default function Projects() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+function FeaturedProject() {
+  const [main, ...rest] = featured.images;
+  return (
+    <motion.article
+      className="mb-16 border border-gray-200 bg-white"
+      variants={fadeUp}
+      custom={2}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
+      <div className="p-3 bg-[#0b0d14]">
+        <Image
+          src={main.src}
+          alt={main.alt}
+          width={main.width}
+          height={main.height}
+          sizes="(min-width: 1024px) 1000px, 100vw"
+          className="w-full h-auto"
+        />
+      </div>
+
+      <div className="p-6 md:p-10">
+        <div className="flex items-center gap-3 mb-2 flex-wrap">
+          <span className="text-xs text-gray-300 font-mono">01</span>
+          <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">{featured.title}</h3>
+          <span className="text-xs text-gray-400 border border-gray-200 px-2 py-0.5 tracking-wide">
+            Destaque
+          </span>
+          <span className="text-xs text-emerald-600 border border-emerald-200 px-2 py-0.5 tracking-wide">
+            Em produção
+          </span>
+        </div>
+        <p className="text-gray-700 text-base mb-5">{featured.subtitle}</p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8">
+          <div>
+            <p className="text-gray-500 text-sm leading-relaxed mb-5">{featured.description}</p>
+            <div className="flex flex-wrap gap-x-3 gap-y-1">
+              {featured.tags.map((tag) => (
+                <span key={tag} className="text-xs text-gray-400 font-mono">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+          <ul className="flex flex-col gap-3">
+            {featured.details.map((d) => (
+              <li key={d} className="text-gray-500 text-sm leading-relaxed pl-4 border-l border-gray-200">
+                {d}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8">
+          {rest.map((img) => (
+            <figure key={img.src} className="bg-[#0b0d14] p-2 flex flex-col">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={img.width}
+                height={img.height}
+                sizes="(min-width: 640px) 33vw, 100vw"
+                className="w-full h-auto my-auto"
+              />
+              <figcaption className="text-[11px] text-gray-400 mt-2 px-1">{img.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="text-xs text-gray-400 mt-3">
+          Imagens com dados e câmeras de demonstração, para preservar a oficina e os clientes.
+        </p>
+      </div>
+    </motion.article>
   );
 }
